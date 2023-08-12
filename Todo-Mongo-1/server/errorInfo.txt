@@ -1,0 +1,22 @@
+error:
+TypeError: Cannot destructure property 'text' of 'req.body' as it is undefined.
+    at saveToDo (file:///D:/My%20training%20skill/FRONT-END/TUTORIAL/TODO-LIST/Tod
+
+solution: "wrong place position "
+
+the position must subsequent like this 
+
+- app.use(express.json());
+- app.use(cors());
+- app.use(routes);
+
+
+
+error:
+file:///D:/My%20training%20skill/FRONT-END/TUTORIAL/TODO-LIST/Todo-Mongo-1/server/controllers/ToDoCon.js:13
+  return res.status(400).send("This object already exist")
+
+why: 
+It seems like you're trying to use return outside of a function in the ES module context, which is causing the SyntaxError. In an ES module, the top-level code is executed immediately and not within a function's scope. Therefore, you can't use return at the top level of the module.
+
+To handle this scenario, you should replace return with the regular res.status().send() pattern without return. Here's the corrected version of the code:

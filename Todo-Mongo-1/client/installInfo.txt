@@ -1,0 +1,4 @@
+$ yarn create vite
+chose typescript
+
+$ yarn add react-icons
