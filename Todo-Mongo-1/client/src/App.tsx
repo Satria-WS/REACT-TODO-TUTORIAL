@@ -1,4 +1,5 @@
 import AddToDo from "./component/AddToDo"
+import "./index.css"
 
 function App() {
 

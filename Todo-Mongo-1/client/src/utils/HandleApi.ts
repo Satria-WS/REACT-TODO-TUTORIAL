@@ -23,11 +23,21 @@ const addTodo = (text: string, setText: setText, setTodo: setTodo): void => {
   axios.post(`${baseUrl}/save`, { text }).then((data) => {
     console.log(data);
     setText("");
-     getAllToDo(setTodo);//will be render if added
+    getAllToDo(setTodo); //will be render if added
   });
 };
 
-export { getAllToDo, addTodo };
+const updateTodo = (toDoId, text, setTodo, setText, setIsUpdating) => {
+  axios.put(`${baseUrl}/update`, { _id: toDoId, text })
+    .then((data) => {
+    console.log(data);
+    setText("");
+    setIsUpdating(false);
+    getAllToDo(setTodo);
+  });
+};
+
+export { getAllToDo, addTodo , updateTodo };
 
 //logicInfo
 /*

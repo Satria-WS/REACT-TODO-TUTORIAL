@@ -49,6 +49,7 @@ input {
   color: #fff;
   padding: 1.5rem 3rem;
   border-radius: 5px;
+  
 }
 
 .icons {
@@ -58,9 +59,10 @@ input {
   right: 20px;
   display: flex;
   gap: 0.5rem;
+
 }
 
-icon {
+.icon {
   cursor: pointer;
   font-size:20px;
 }
