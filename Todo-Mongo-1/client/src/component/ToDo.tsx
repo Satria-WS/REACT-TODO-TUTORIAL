@@ -3,9 +3,9 @@ import React from "react";
 import { BiEdit } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
 type ToDoProps = {
-  text: number,
-  updateMode: () => void,
-  deleteToDo: () => void,
+  text: string,
+  updateMode?: () => void,
+  deleteToDo?: () => void,
 };
 
 const ToDo: React.FC<ToDoProps> = ({ text, updateMode, deleteToDo }) => {
