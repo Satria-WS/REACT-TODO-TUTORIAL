@@ -2,3 +2,8 @@ $ yarn create vite
 chose typescript
 
 $ yarn add react-icons
+
+
+//DEPLOy backend using render.com
+how to deploy backend
+refrence: https://www.youtube.com/watch?v=PvMDWbAPPK4

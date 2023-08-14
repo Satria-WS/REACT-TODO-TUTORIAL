@@ -1,6 +1,6 @@
 import ToDo from "./ToDo";
 import { useEffect, useState } from "react";
-import { getAllToDo, addTodo, updateTodo } from "../utils/HandleApi";
+import { getAllToDo, addTodo, updateTodo, deleteTodo } from "../utils/HandleApi";
 
 
 interface ToDoItem {
@@ -52,7 +52,8 @@ const AddToDo: React.FC = () => {
             return <ToDo
               key={item._id}
               text={item.text}
-              updateMode={()=> updateModeX(item._id,item.text)}
+              updateMode={() => updateModeX(item._id, item.text)}
+              deleteToDo={()=> deleteTodo(item._id,setToDo)}
               />;
           })}
         </div>

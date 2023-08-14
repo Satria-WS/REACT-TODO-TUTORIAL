@@ -27,9 +27,8 @@ const addTodo = (text: string, setText: setText, setTodo: setTodo): void => {
   });
 };
 
-const updateTodo = (toDoId, text, setTodo, setText, setIsUpdating) => {
-  axios.put(`${baseUrl}/update`, { _id: toDoId, text })
-    .then((data) => {
+const updateTodo = (todoId, text, setTodo, setText, setIsUpdating) => {
+  axios.put(`${baseUrl}/update`, { _id: todoId, text }).then((data) => {
     console.log(data);
     setText("");
     setIsUpdating(false);
@@ -37,7 +36,17 @@ const updateTodo = (toDoId, text, setTodo, setText, setIsUpdating) => {
   });
 };
 
-export { getAllToDo, addTodo , updateTodo };
+const deleteTodo = (_id,  setTodo) => {
+  axios
+    .post(`${baseUrl}/delete`, { _id })
+    .then((data) => {
+      console.log(data);
+      getAllToDo(setTodo);
+    })
+    .catch((err) => console.log(err));
+};
+
+export { getAllToDo, addTodo, updateTodo, deleteTodo };
 
 //logicInfo
 /*
